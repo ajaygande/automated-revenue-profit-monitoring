@@ -1,0 +1,10 @@
+- Highest sales month was 2017-11 with total sales of 118447.82.
+- Lowest sales month was 2014-02 with total sales of 4519.89.
+- Highest profit month was 2016-12 with total profit of 17885.31.
+- Lowest profit month was 2015-01 with total profit of -3281.01.
+- Technology generated the highest sales among categories.
+- Furniture had the weakest profit margin among categories.
+- West generated the highest sales among regions.
+- Central had the weakest profit margin among regions.
+- Loss-making products had an average discount of 29.14%, compared with 12.44% for profitable products.
+- The monitoring system detected 33 risky months and 301 loss-making products.
