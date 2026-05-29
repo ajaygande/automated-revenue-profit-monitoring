@@ -10,7 +10,7 @@ sample_-_superstore.xls
 
 ## Source
 
-Dataset: **Superstore Dataset by Divy Jain**  
+Dataset: [**Superstore Dataset by Divy Jain**](https://www.kaggle.com/datasets/divyjain28/superstore-sales)
 Platform: **Kaggle**
 
 ## Description
