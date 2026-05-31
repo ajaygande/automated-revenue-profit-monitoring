@@ -20,22 +20,25 @@ This project automates that entire workflow and produces consistent, reproducibl
 ---
 
 ## ⚙️ How It Works
+
+```
 Raw XLS File
-│
-▼
+     │
+     ▼
 Data Preparation → Monthly File Split → Auto-Combine
-│
-▼
+     │
+     ▼
 Data Validation (6 checks)
-│
-▼
+     │
+     ▼
 KPI Calculation → Monthly Trend Analysis
-│
-▼
+     │
+     ▼
 Risk Detection (5 alert types)
-│
-▼
+     │
+     ▼
 Charts + CSV Reports + Business Insights
+```
 
 ---
 
@@ -191,10 +194,11 @@ Before any KPI is calculated, the pipeline validates data reliability:
 ---
 
 ## 📋 Requirements
+```
 pandas==2.2.2  
 matplotlib==3.9.2  
 xlrd==2.0.1  
-
+```
 ---
 
 *Dataset: Sample Superstore — a commonly used retail sales dataset for business analytics practice.*
