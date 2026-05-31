@@ -1,0 +1,10 @@
+- Highest sales month : 2017-11  ($118,447.82)
+- Lowest  sales month : 2014-02 ($4,519.89)
+- Highest profit month: 2016-12  ($17,885.31)
+- Lowest  profit month: 2015-01 ($-3,281.01)
+- Highest-sales category : Technology
+- Weakest-margin category: Furniture
+- Highest-sales region   : West
+- Weakest-margin region  : Central
+- Avg discount — loss products: 29.14%  vs  profitable: 12.44%
+- Monitoring detected 33 risky months and 301 loss-making products.
