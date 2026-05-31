@@ -1,144 +1,196 @@
-# Automated Revenue & Profit Monitoring System
+# 📊 Superstore Revenue & Profit Monitoring System
 
-## Project Overview
+![Python](https://img.shields.io/badge/Python-3.9+-blue?style=flat&logo=python&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-2.2.2-150458?style=flat&logo=pandas)
+![matplotlib](https://img.shields.io/badge/matplotlib-3.9.2-11557c?style=flat)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=flat)
 
-This project is an automated business reporting workflow built with Python. It processes Superstore sales data, validates data quality, calculates key revenue and profitability KPIs, detects business risks, creates visual reports, and exports stakeholder-ready output files.
+> An end-to-end automated business reporting pipeline that combines monthly sales files, validates data quality, calculates KPIs, detects profitability risks, and exports stakeholder-ready reports — all from a single notebook run.
 
-The goal of this project is to simulate a real data analyst reporting task where monthly sales files need to be combined, cleaned, analyzed, and converted into useful business insights.
+[![Open in nbviewer](https://img.shields.io/badge/Open%20in-nbviewer-orange?style=for-the-badge)](https://nbviewer.org/github/ajaygande/superstore-revenue-profit-monitor/blob/main/Superstore_Revenue_Profit_Monitor.ipynb)
 
-## Business Problem
+---
 
-Sales and operations teams often receive transaction data in separate monthly files. Manually combining these files, checking data quality, calculating KPIs, and preparing reports can be time-consuming and error-prone.
+## 🔍 Business Problem
 
-This project solves that problem by creating a repeatable Python workflow that automates the reporting process and highlights areas that require business attention.
+Sales teams typically receive transaction data in separate monthly files. Manually combining them, checking quality, calculating KPIs, and preparing reports is time-consuming and error-prone.
 
-## Dataset
+This project automates that entire workflow and produces consistent, reproducible monthly performance outputs — replacing hours of manual work with a single notebook execution.
 
-Dataset used: **Superstore Dataset by Divy Jain** from Kaggle.
+---
 
-The dataset contains sales transaction records with fields such as:
+## ⚙️ How It Works
+Raw XLS File
+│
+▼
+Data Preparation → Monthly File Split → Auto-Combine
+│
+▼
+Data Validation (6 checks)
+│
+▼
+KPI Calculation → Monthly Trend Analysis
+│
+▼
+Risk Detection (5 alert types)
+│
+▼
+Charts + CSV Reports + Business Insights
 
-- Order Date
-- Ship Date
-- Region
-- Category
-- Sub-Category
-- Product Name
-- Sales
-- Quantity
-- Discount
-- Profit
+---
 
-## Tools Used
+## 📁 Repository Structure
+superstore-revenue-profit-monitor/
+│
+├── Superstore_Revenue_Profit_Monitor.ipynb   # Main notebook
+├── sample_-_superstore.xls                   # Source dataset
+├── requirements.txt                          # Dependencies
+├── README.md                                 # This file
+│
+├── charts/                                   # Auto-generated on notebook run
+│   ├── monthly_sales_trend.png
+│   ├── monthly_profit_trend.png
+│   ├── profit_margin_by_category.png
+│   ├── sales_vs_profit_by_region.png
+│   └── top_loss_making_products.png
+│
+└── output_reports/                           # Auto-generated on notebook run
+├── kpi_summary.csv
+├── monthly_kpi_summary.csv
+├── data_validation_summary.csv
+├── business_risk_alerts.csv
+├── business_insights.txt
+├── loss_making_products.csv
+├── high_sales_low_profit_products.csv
+├── high_discount_loss_products.csv
+├── category_risk_summary.csv
+├── region_risk_summary.csv
+├── risky_months.csv
+└── cleaned_combined_sales_data.csv
 
-- Python
-- pandas
-- matplotlib
-- Google Colab
+---
 
-## Project Workflow
+## 🚀 Setup & How to Run
 
-1. Load the Superstore dataset
-2. Inspect columns, data types, and missing values
-3. Convert date columns into proper datetime format
-4. Create reporting columns such as year, month, month-year, and shipping days
-5. Split the dataset into monthly CSV files to simulate recurring monthly reports
-6. Automatically combine monthly CSV files into one reporting dataset
-7. Run data validation checks
-8. Calculate business KPIs
-9. Detect revenue and profit risk areas
-10. Create visual charts
-11. Export final CSV reports and business insights
+**1. Clone the repository**
+```bash
+git clone https://github.com/ajaygande/superstore-revenue-profit-monitor.git
+cd superstore-revenue-profit-monitor
+```
 
-## Data Validation Checks
+**2. Install dependencies**
+```bash
+pip install -r requirements.txt
+```
 
-The project includes validation checks for:
+**3. Run the notebook**
 
-- Missing required columns
-- Missing values
-- Duplicate rows
-- Negative sales values
-- Zero or negative quantity values
-- Invalid discount values
-- Ship dates earlier than order dates
+Open `Superstore_Revenue_Profit_Monitor.ipynb` in Jupyter or VS Code and run all cells top to bottom. All charts and reports are generated automatically.
 
-These checks help ensure that the reporting output is based on reliable data.
+> ⚙️ All alert thresholds are in the **Configuration** cell at the top of the notebook. Edit them without touching any other code.
 
-## KPIs Calculated
+---
 
-The project calculates the following KPIs:
+## 📊 Dataset
 
-- Total Sales
-- Total Profit
-- Total Orders
-- Total Quantity Sold
-- Average Order Value
-- Profit Margin
-- Average Discount
-- Monthly Sales Growth
-- Monthly Profit Growth
+**[Superstore Dataset](https://www.kaggle.com/datasets/divyjain28/superstore-sales?select=sample_-_superstore.xls)** — a retail sales dataset containing transaction records across US regions, product categories, and customer segments.
 
-## Business Risk Detection
+| Field | Description |
+|---|---|
+| Order Date / Ship Date | Transaction and delivery dates |
+| Region | US sales region |
+| Category / Sub-Category | Product classification |
+| Sales / Profit / Discount | Core financial fields |
+| Quantity | Units sold per order line |
 
-The project includes rule-based alerts to identify:
+---
 
-- High sales but low profit products
-- Loss-making products
-- High discount and negative profit products
-- Weak category-level profit margins
-- Weak region-level profit margins
-- Monthly sales drops
-- Monthly profit drops
-- Monthly margin drops
+## ✅ Data Validation — 6 Checks
 
-This makes the project more than a basic sales report. It acts as a simple business performance monitoring system.
+Before any KPI is calculated, the pipeline validates data reliability:
 
-## Visualizations
+| Check | What It Catches |
+|---|---|
+| Missing required columns | Incomplete data extracts |
+| Duplicate rows | Double-counted transactions |
+| Negative sales values | Data entry errors |
+| Zero / negative quantity | Invalid order records |
+| Invalid discount values | Discounts outside 0–100% range |
+| Ship date before order date | Impossible date sequences |
 
-The notebook creates and saves the following charts:
+---
 
-- Monthly Sales Trend
-- Monthly Profit Trend
-- Profit Margin by Category
-- Sales vs Profit by Region
-- Top 10 Loss-Making Products
+## 📈 Charts & Visualisations
 
-## Output Files
+### Monthly Sales Trend
+![Monthly Sales Trend](charts/monthly_sales_trend.png)
 
-The project exports final reports such as:
+### Monthly Profit Trend
+![Monthly Profit Trend](charts/monthly_profit_trend.png)
 
-- `kpi_summary.csv`
-- `monthly_kpi_summary.csv`
-- `data_validation_summary.csv`
-- `business_risk_alerts.csv`
-- `category_risk_summary.csv`
-- `region_risk_summary.csv`
-- `risky_months.csv`
-- `business_insights.txt`
+### Profit Margin by Category
+![Profit Margin by Category](charts/profit_margin_by_category.png)
 
-## Key Business Questions Answered
+### Sales vs Profit by Region
+![Sales vs Profit by Region](charts/sales_vs_profit_by_region.png)
 
-This project helps answer questions such as:
+### Top 10 Loss-Making Products
+![Top 10 Loss-Making Products](charts/top_loss_making_products.png)
 
-- Which months had the highest and lowest sales?
-- Which months had the highest and lowest profit?
-- Which products generated losses?
-- Which products had high sales but weak profitability?
-- Which categories had the weakest profit margins?
-- Which regions had weaker profitability?
-- Is discounting connected with lower profitability?
-- Which months showed performance risk?
+---
 
-## How to Run
+## 🚨 Risk Detection — 5 Alert Types
 
-1. Open the notebook in Google Colab.
-2. Upload the Superstore dataset file.
-3. Run the notebook cells from top to bottom.
-4. Review generated charts and output reports.
+| Alert | Logic | Purpose |
+|---|---|---|
+| High Sales Low Profit | Top 25% sales + margin < 5% | Catch revenue that hides weak profitability |
+| Loss-Making Products | Total profit < 0 | Flag items needing pricing or discount review |
+| High Discount Loss | Avg discount ≥ 30% + negative profit | Identify where discounting destroys margin |
+| Category Risk | Margin comparison across categories | Spot structurally weak product groups |
+| Monthly Performance | >10% MoM drop in sales / profit / margin | Detect early warning signs in business trends |
 
-Required libraries:
+---
 
-```text
-pandas
-matplotlib
-xlrd
+## 📦 Key Outputs
+
+| File | Description |
+|---|---|
+| `monthly_kpi_summary.csv` | Sales, profit, margin, growth % by month |
+| `business_risk_alerts.csv` | Single combined exception report for stakeholders |
+| `business_insights.txt` | Auto-generated plain-language performance summary |
+| `data_validation_summary.csv` | Six-point data quality check results |
+| `loss_making_products.csv` | All products with negative total profit |
+| `cleaned_combined_sales_data.csv` | Final cleaned dataset after monthly files are merged |
+
+---
+
+## ❓ Business Questions Answered
+
+- Which months had the highest and lowest sales and profit?
+- Which products generated losses despite high sales volume?
+- Is heavy discounting linked to negative profitability?
+- Which categories and regions have structurally weak margins?
+- Which months showed early warning signs of performance risk?
+
+---
+
+## 🛠️ Skills Demonstrated
+
+- **Python & pandas** — data cleaning, aggregation, feature engineering, groupby operations
+- **Automation** — monthly file simulation, auto-combine, single-run pipeline
+- **Data Validation** — quality checks before any KPI is calculated
+- **KPI Design** — profit margin, AOV, MoM growth rates, discount impact analysis
+- **Business Thinking** — rule-based alerts that go beyond descriptive reporting
+- **Data Visualisation** — matplotlib charts saved at print quality
+- **Reporting** — CSV outputs and plain-language insight generation
+
+---
+
+## 📋 Requirements
+pandas==2.2.2  
+matplotlib==3.9.2  
+xlrd==2.0.1  
+
+---
+
+*Dataset: Sample Superstore — a commonly used retail sales dataset for business analytics practice.*
