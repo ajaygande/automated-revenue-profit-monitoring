@@ -40,6 +40,7 @@ Charts + CSV Reports + Business Insights
 ---
 
 ## 📁 Repository Structure
+```
 superstore-revenue-profit-monitor/
 │
 ├── Superstore_Revenue_Profit_Monitor.ipynb   # Main notebook
@@ -67,7 +68,7 @@ superstore-revenue-profit-monitor/
 ├── region_risk_summary.csv
 ├── risky_months.csv
 └── cleaned_combined_sales_data.csv
-
+```
 ---
 
 ## 🚀 Setup & How to Run
