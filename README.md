@@ -44,10 +44,13 @@ Charts + CSV Reports + Business Insights
 superstore-revenue-profit-monitor/
 │
 ├── Superstore_Revenue_Profit_Monitor.ipynb   # Main notebook
-├── sample_-_superstore.xls                   # Source dataset
 ├── requirements.txt                          # Dependencies
 ├── README.md                                 # This file
 │
+├── Dataset/
+│   ├── sample_-_superstore.xls
+│   └── README.md
+│ 
 ├── charts/                                   # Auto-generated on notebook run
 │   ├── monthly_sales_trend.png
 │   ├── monthly_profit_trend.png
